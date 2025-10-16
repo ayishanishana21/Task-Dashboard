@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { DndContext, PointerSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { SortableContext } from "@dnd-kit/sortable";
@@ -62,25 +61,37 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      <div className="max-w-full mx-auto p-6">
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 mb-6">
-          <div className="flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Task Management</h1>
-              <p className="text-gray-600 mt-1">Organize and track your tasks efficiently</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute -bottom-40 -left-32 w-80 h-80 bg-gradient-to-r from-green-200 to-cyan-200 rounded-full blur-3xl opacity-30"></div>
+      </div>
+
+      <div className="relative max-w-full mx-auto p-6">
+        {/* Header */}
+        <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-white/60 p-8 mb-8 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#003E64] to-[#005a8c]"></div>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div className="flex-1">
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                Task Management
+              </h1>
+              <p className="text-gray-600 mt-2 text-lg">Organize and track your tasks efficiently</p>
             </div>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-sm"
+              className="group relative px-6 py-3 bg-gradient-to-r from-[#003E64] to-[#005a8c] hover:from-[#003E64] hover:to-[#005a8c] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center gap-2"
             >
-              + Add Task
+              <span className="relative z-10">+ Add Task</span>
+              <div className="absolute inset-0 bg-white/20 rounded-xl scale-0 group-hover:scale-100 transition-transform duration-300"></div>
             </button>
           </div>
         </div>
 
+        {/* Main Content */}
         <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex gap-6 flex-wrap lg:flex-nowrap">
             {columns.map((col) => (
               <SortableContext key={col} items={tasks.filter((t) => t.status === col).map((t) => t.id)}>
                 <TaskColumn
