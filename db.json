@@ -4,19 +4,19 @@
       "id": "1",
       "title": "Setup Project",
       "description": "Initialize Vite + React project",
-      "status": "Done"
+      "status": "In Progress"
     },
     {
       "id": "2",
       "title": "Install Tailwind",
       "description": "Configure Tailwind CSS",
-      "status": "In Progress"
+      "status": "To Do"
     },
     {
       "id": "1cf1",
       "title": "api integration",
       "description": "",
-      "status": "In Progress"
+      "status": "Done"
     },
     {
       "id": "84ad",

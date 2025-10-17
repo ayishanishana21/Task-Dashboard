@@ -62,14 +62,12 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
-      {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-r from-blue-200 to-purple-200 rounded-full blur-3xl opacity-30"></div>
         <div className="absolute -bottom-40 -left-32 w-80 h-80 bg-gradient-to-r from-green-200 to-cyan-200 rounded-full blur-3xl opacity-30"></div>
       </div>
 
       <div className="relative max-w-full mx-auto p-6">
-        {/* Header */}
         <div className="bg-white/80 backdrop-blur-lg rounded-2xl shadow-sm border border-white/60 p-8 mb-8 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#003E64] to-[#005a8c]"></div>
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
@@ -89,7 +87,6 @@ function App() {
           </div>
         </div>
 
-        {/* Main Content */}
         <DndContext sensors={sensors} onDragEnd={handleDragEnd}>
           <div className="flex gap-6 flex-wrap lg:flex-nowrap">
             {columns.map((col) => (

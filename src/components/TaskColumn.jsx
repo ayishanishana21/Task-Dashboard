@@ -59,7 +59,7 @@ const TaskColumn = ({ title, tasks, onStatusChange }) => {
       ref={setNodeRef}
       className={getColumnStyles()}
     >
-      {/* Column Header */}
+
       <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-200/60">
         <div className="flex items-center gap-3">
           <h2 className={getHeaderStyles()}>{title}</h2>
@@ -69,8 +69,7 @@ const TaskColumn = ({ title, tasks, onStatusChange }) => {
         </div>
         <div className="w-2 h-2 rounded-full bg-current opacity-60"></div>
       </div>
-      
-      {/* Tasks Container */}
+
       <SortableContext
         items={tasks.map((t) => t.id)}
         strategy={verticalListSortingStrategy}
@@ -85,8 +84,7 @@ const TaskColumn = ({ title, tasks, onStatusChange }) => {
           ))}
         </div>
       </SortableContext>
-      
-      {/* Empty State */}
+   
       {tasks.length === 0 && (
         <div className="text-center py-12">
           <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">

@@ -42,19 +42,16 @@ const TaskCard = ({ task, onStatusChange }) => {
         isDragging ? "shadow-2xl scale-105" : "hover:scale-[1.02]"
       }`}
     >
-
-      <div className="flex items-start justify-between mb-3">
+<div className="flex items-start justify-between mb-3">
         <h3 className="font-semibold text-gray-900 text-lg leading-tight pr-2">{task.title}</h3>
       </div>
       
-
       {task.description && (
         <p className="text-sm text-gray-600 mb-4 leading-relaxed line-clamp-3 bg-gray-50/50 rounded-lg p-3">
           {task.description}
         </p>
       )}
       
-
       <div className="relative">
         <select
           value={task.status}
@@ -72,7 +69,6 @@ const TaskCard = ({ task, onStatusChange }) => {
         </div>
       </div>
       
-
       <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100">
         <span className="text-xs text-gray-400 font-medium">
           {new Date().toLocaleDateString()}

@@ -11,8 +11,8 @@ const AddTaskModal = ({ isOpen, onRequestClose, onAddTask }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title.trim()) return;
-    
+    if (!title.trim()) 
+      return;
     setIsSubmitting(true);
     try {
       await onAddTask({ title: title.trim(), description: description.trim(), status });
@@ -41,7 +41,6 @@ const AddTaskModal = ({ isOpen, onRequestClose, onAddTask }) => {
       overlayClassName="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50"
       closeTimeoutMS={200}
     >
-      {/* Modal Header */}
       <div className="relative border-b border-gray-100">
         <div className="p-6">
           <div className="flex items-center justify-between">
@@ -62,10 +61,8 @@ const AddTaskModal = ({ isOpen, onRequestClose, onAddTask }) => {
         </div>
       </div>
 
-      {/* Modal Content */}
       <div className="p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Title Input */}
           <div className="space-y-2">
             <label className="block text-sm font-medium text-gray-700">
               Task Title <span className="text-red-500">*</span>
@@ -93,7 +90,6 @@ const AddTaskModal = ({ isOpen, onRequestClose, onAddTask }) => {
             </div>
           </div>
           
-          {/* Description Input */}
           <div className="space-y-2">
             <label className="block text-sm font-medium text-gray-700">
               Description
@@ -119,7 +115,6 @@ const AddTaskModal = ({ isOpen, onRequestClose, onAddTask }) => {
             </div>
           </div>
           
-          {/* Status Select */}
           <div className="space-y-2">
             <label className="block text-sm font-medium text-gray-700">
               Status
@@ -143,7 +138,6 @@ const AddTaskModal = ({ isOpen, onRequestClose, onAddTask }) => {
             </div>
           </div>
           
-          {/* Action Buttons */}
           <div className="flex justify-end gap-3 pt-4 border-t border-gray-100">
             <button
               type="button"
