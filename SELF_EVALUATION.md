@@ -27,6 +27,7 @@ Implemented a 3-column task board with full drag-and-drop functionality using `@
 - Add task deletion and editing
 - Add better visual feedback while dragging
 - Add filtering and search
+- Add assigning task
 
 ## Technology Rating
 
